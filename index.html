@@ -47,10 +47,10 @@
 
         /* --- HERO --- */
         .hero { 
-            padding: 140px 20px 100px; text-align: center; max-width: 950px; margin: 0 auto;
+            padding: 140px 20px 80px; text-align: center; max-width: 950px; margin: 0 auto;
         }
         
-        /* 📸 PROFILE IMAGE STYLE (Final Fix 25%) */
+        /* 📸 PROFILE IMAGE STYLE (FIXED 25%) */
         .profile-container {
             width: 170px; height: 170px; margin: 0 auto 35px auto;
             border-radius: 50%; padding: 6px;
@@ -63,7 +63,7 @@
         .profile-img {
             width: 100%; height: 100%; 
             object-fit: cover; 
-            object-position: center 25%; /* ✅ Correct Position */
+            object-position: center 25%; /* Perfect Position */
             border-radius: 50%;
         }
         @keyframes floatProfile {
@@ -93,16 +93,34 @@
         }
         .btn-primary:hover { background: #0284c7; transform: translateY(-3px); }
 
-        /* --- SKILLS STRIP --- */
-        .tech-strip {
-            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-            padding: 30px 0; background: var(--surface); text-align: center;
+        /* --- SKILLS GRID (NEW & IMPROVED) --- */
+        .skills-section {
+            padding: 40px 20px; max-width: 1200px; margin: 0 auto;
         }
-        .tech-icons { 
-            display: flex; gap: 50px; justify-content: center; flex-wrap: wrap; opacity: 0.7; color: var(--text-muted);
+        .skills-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;
         }
-        .tech-icons i { font-size: 30px; transition: 0.3s; }
-        .tech-icons i:hover { color: var(--primary); transform: scale(1.1); opacity: 1; }
+        .skill-card {
+            background: var(--surface); padding: 30px; border-radius: 20px; border: 1px solid var(--border);
+            transition: 0.3s; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+        }
+        .skill-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 15px 30px rgba(14, 165, 233, 0.1); }
+        
+        .s-header { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+        .s-icon-box {
+            width: 50px; height: 50px; background: rgba(14, 165, 233, 0.1); border-radius: 12px;
+            display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 22px;
+        }
+        .s-title h3 { font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin: 0; }
+        .s-title span { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+        
+        .s-list { list-style: none; padding: 0; }
+        .s-list li {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 10px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; font-weight: 600; color: var(--text-main);
+        }
+        .s-list li:last-child { border-bottom: none; }
+        .s-tag { color: var(--text-muted); font-weight: 400; font-size: 0.85rem; }
 
         /* --- PROCESS --- */
         .process-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
@@ -118,8 +136,8 @@
         .p-text { font-size: 0.95rem; color: var(--text-muted); }
 
         /* --- PROJECTS --- */
-        .section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-header { margin-bottom: 60px; }
+        .section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-header { margin-bottom: 50px; text-align: left; }
         .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main); }
         .section-sub { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; }
 
@@ -169,6 +187,7 @@
             .p-img-box { height: 240px; }
             .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
             .p-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -193,16 +212,59 @@
         <a href="#work" class="btn-primary">View Capabilities <i class="fas fa-arrow-down"></i></a>
     </header>
 
-    <div class="tech-strip">
-        <div class="tech-icons">
-            <i class="fab fa-java" title="Java"></i>
-            <i class="fab fa-android" title="Android"></i>
-            <i class="fab fa-react" title="React"></i>
-            <i class="fab fa-js" title="JavaScript"></i>
-            <i class="fas fa-database" title="SQL / Firebase"></i>
-            <i class="fas fa-cloud" title="Cloud API"></i>
+    <section class="skills-section">
+        <div class="skills-grid">
+            
+            <div class="skill-card">
+                <div class="s-header">
+                    <div class="s-icon-box"><i class="fab fa-android"></i></div>
+                    <div class="s-title">
+                        <h3>App Development</h3>
+                        <span>Native Android & iOS</span>
+                    </div>
+                </div>
+                <ul class="s-list">
+                    <li>Java / Kotlin <span class="s-tag">Core Logic</span></li>
+                    <li>Android SDK <span class="s-tag">Native UI</span></li>
+                    <li>API Integration <span class="s-tag">Connect Data</span></li>
+                    <li>Play Store <span class="s-tag">Deployment</span></li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <div class="s-header">
+                    <div class="s-icon-box"><i class="fas fa-code"></i></div>
+                    <div class="s-title">
+                        <h3>Web Development</h3>
+                        <span>Modern & Responsive</span>
+                    </div>
+                </div>
+                <ul class="s-list">
+                    <li>HTML5 & CSS3 <span class="s-tag">Design</span></li>
+                    <li>JavaScript <span class="s-tag">Interactivity</span></li>
+                    <li>React.js <span class="s-tag">Fast UI</span></li>
+                    <li>Admin Panels <span class="s-tag">Dashboards</span></li>
+                </ul>
+            </div>
+
+            <div class="skill-card">
+                <div class="s-header">
+                    <div class="s-icon-box"><i class="fas fa-database"></i></div>
+                    <div class="s-title">
+                        <h3>Backend & Cloud</h3>
+                        <span>Secure & Scalable</span>
+                    </div>
+                </div>
+                <ul class="s-list">
+                    <li>Firebase <span class="s-tag">Realtime DB</span></li>
+                    <li>Authentication <span class="s-tag">User Login</span></li>
+                    <li>Cloud Storage <span class="s-tag">Files/Media</span></li>
+                    <li>Hosting <span class="s-tag">Vercel/AWS</span></li>
+                </ul>
+            </div>
+
         </div>
-    </div>
+    </section>
 
     <section class="process-section">
         <div style="text-align: center; margin-bottom: 40px;">
