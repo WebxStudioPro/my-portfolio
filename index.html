@@ -4,21 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Krish Radke | Custom Software Architect & Website Developer</title>
+    <title>Krish Radke | Game, App & Website Developer</title>
     
-    <meta name="description" content="Official portfolio of Krish Radke. Expert Website Developer and Android App Creator. I build custom software solutions for modern businesses.">
-    <meta name="keywords" content="Krish Radke, Website Developer, Krish Radke Developer, Web Development, Android App Developer, Software Architect, Krish Radke Portfolio, Freelance Developer">
+    <meta name="description" content="Official portfolio of Krish Radke. Expert Website, App & Game Developer based in Nagpur, Maharashtra. I build custom software solutions for modern businesses.">
+    
+    <meta name="keywords" content="Krish Radke, Krish Radke Nagpur, Website Developer Nagpur, Game Developer Maharashtra, Krish Radke Location, Android App Developer India, Krish Tech Portfolio">
 
     <meta name="google-site-verification" content="87zIiOu8V4ybkIjdxacQm0x9CX2RwrOvYJRU8v_ZYp4" />
 
-    <link rel="icon" type="image/jpg" href="https://i.postimg.cc/BnwzR5tZ/21301.jpg">
+    <link rel="icon" type="image/webp" href="39842.webp">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "WebSite",
+      "@type": "Person",
       "name": "Krish Radke",
+      "jobTitle": "Full Stack & Game Developer",
       "url": "https://krish-tech.vercel.app/",
+      "image": "https://i.postimg.cc/BnwzR5tZ/21301.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nagpur",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "India"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "BCCA"
+      },
+      "knowsAbout": ["Web Development", "Game Development", "Android Apps", "Unity", "React"],
       "alternateName": ["Krish Radke Portfolio", "Krish Tech"]
     }
     </script>
@@ -38,6 +52,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background: var(--bg); color: var(--text-main); 
@@ -140,35 +155,32 @@
         .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; color: var(--text-main); }
         .section-sub { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; }
 
-        .project-card {
-            display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
-            margin-bottom: 80px; padding: 30px; border-radius: 24px;
-            border: 1px solid var(--border); background: var(--surface);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); transition: 0.4s;
+        /* --- 🔥 DYNAMIC PROJECT STYLES --- */
+        .projects-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;
         }
-        .project-card:hover { border-color: var(--primary); transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
-        .p-img-box {
-            height: 320px; border-radius: 16px; overflow: hidden; background: var(--border);
-            border: 1px solid var(--border); position: relative;
+        .dynamic-card {
+            background: var(--surface); border-radius: 16px; overflow: hidden;
+            border: 1px solid var(--border); transition: 0.4s;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); display: flex; flex-direction: column;
+            text-decoration: none;
         }
-        .p-img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; opacity: 0.9; }
-        .project-card:hover .p-img { transform: scale(1.05); opacity: 1; }
-        .p-content h3 { font-size: 2rem; margin-bottom: 15px; font-weight: 700; color: var(--text-main); }
-        .p-content p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 25px; line-height: 1.7; }
-        .tech-tags { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
-        .tag { 
-            background: rgba(14, 165, 233, 0.1); color: var(--primary); border: 1px solid rgba(14, 165, 233, 0.2);
-            padding: 6px 14px; border-radius: 50px; font-size: 12px; font-weight: 600;
+        .dynamic-card:hover {
+            transform: translateY(-7px); border-color: var(--primary);
+            box-shadow: 0 20px 25px -5px rgba(14, 165, 233, 0.15);
         }
-        .p-link { font-weight: 700; color: var(--text-main); display: inline-flex; align-items: center; gap: 8px; }
-        .p-link:hover { color: var(--primary); gap: 12px; }
-
-        .stats-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
-            border-top: 1px solid var(--border); padding-top: 60px;
+        .dc-img-box { width: 100%; height: 220px; overflow: hidden; border-bottom: 1px solid var(--border); }
+        .dc-img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .dynamic-card:hover .dc-img { transform: scale(1.05); }
+        .dc-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .dc-title { font-size: 1.4rem; font-weight: 700; color: var(--text-main); margin-bottom: 10px; }
+        .dc-btn { 
+            color: var(--primary); font-weight: 700; font-size: 0.9rem; 
+            display: inline-flex; align-items: center; gap: 8px; margin-top: 15px; 
         }
-        .stat-item h2 { font-size: 3rem; color: var(--text-main); margin-bottom: 5px; font-weight: 800; }
-        .stat-item p { color: var(--text-muted); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.5px; }
+        .dc-btn:hover { gap: 12px; }
+        
+        #loading-box { text-align: center; padding: 40px; color: var(--text-muted); font-size: 1.1rem; }
 
         /* --- FORM FIX --- */
         .form-input {
@@ -183,11 +195,8 @@
         
         @media(max-width: 900px) {
             .hero h1 { font-size: 2.8rem; }
-            .project-card { grid-template-columns: 1fr; }
-            .p-img-box { height: 240px; }
             .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-            .p-grid { grid-template-columns: 1fr; }
-            .skills-grid { grid-template-columns: 1fr; }
+            .p-grid, .skills-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -204,9 +213,9 @@
         <div class="profile-container">
             <img src="https://i.postimg.cc/BnwzR5tZ/21301.jpg" alt="Krish Radke" class="profile-img">
         </div>
-        <span class="hero-label">Full Stack & Mobile App Expert</span>
+        <span class="hero-label">Full Stack, Game & App Expert</span>
         <h1>Solutions for Every Industry.</h1>
-        <p>I build custom software for modern businesses. From Real Estate Platforms and Booking Systems to advanced E-Commerce Suites.</p>
+        <p>I build custom software for modern businesses. From Real Estate Platforms and Android Apps to <strong>Immersive Games</strong> and E-Commerce Suites.</p>
         <a href="#work" class="btn-primary">View Capabilities <i class="fas fa-arrow-down"></i></a>
     </header>
 
@@ -248,6 +257,20 @@
                     <li>Hosting <span class="s-tag">Vercel/AWS</span></li>
                 </ul>
             </div>
+            
+            <div class="skill-card">
+                <div class="s-header">
+                    <div class="s-icon-box"><i class="fas fa-gamepad"></i></div>
+                    <div class="s-title"><h3>Game Development</h3><span>2D & 3D Games</span></div>
+                </div>
+                <ul class="s-list">
+                    <li>Unity Engine <span class="s-tag">Core Tool</span></li>
+                    <li>C# Scripting <span class="s-tag">Logic</span></li>
+                    <li>Level Design <span class="s-tag">Environments</span></li>
+                    <li>Physics <span class="s-tag">Realism</span></li>
+                </ul>
+            </div>
+
         </div>
     </section>
 
@@ -265,73 +288,73 @@
             <div class="p-card">
                 <span class="p-num">02</span>
                 <div class="p-head">Agile Development</div>
-                <div class="p-text">I build using modular code (React/Firebase). You get weekly updates and a test link to see your project coming to life.</div>
+                <div class="p-text">I build using modular code. You get weekly updates and test links (APKs or Web Links) to see your project coming to life.</div>
             </div>
             <div class="p-card">
                 <span class="p-num">03</span>
                 <div class="p-head">Deployment</div>
-                <div class="p-text">Launching on high-speed servers (Vercel/AWS). I ensure your site is fast, secure, and ready for thousands of users.</div>
+                <div class="p-text">Launching on high-speed servers or the Play Store. I ensure your product is fast, secure, and ready for thousands of users.</div>
             </div>
         </div>
     </section>
 
     <section id="work" class="section">
         <div class="section-header">
-            <span class="section-sub">Our Expertise</span>
-            <h2 class="section-title">Industry Solutions</h2>
+            <span class="section-sub">Live Projects</span>
+            <h2 class="section-title">My Recent Work</h2>
+            <p style="color:var(--text-muted);">Manage these projects directly from your Admin Panel.</p>
         </div>
 
-        <div class="project-card">
-            <div class="p-img-box">
-                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" class="p-img">
-            </div>
-            <div class="p-content">
-                <h3>Universal Booking Engine</h3>
-                <p>A smart appointment scheduling system designed for Doctors, Salons, and Consultants. Features include calendar sync, SMS reminders, and user management.</p>
-                <div class="tech-tags">
-                    <span class="tag">SaaS Platform</span>
-                    <span class="tag">Automated Scheduling</span>
-                    <span class="tag">Payment Integrated</span>
-                </div>
-                <a href="#" class="p-link" style="opacity:0.7; cursor:default;">Request Demo <i class="fas fa-lock"></i></a>
-            </div>
-        </div>
+        <div id="loading-box">Fetching latest projects from server... ⏳</div>
+        <div id="dynamic-container" class="projects-grid"></div>
 
-        <div class="project-card">
-            <div class="p-img-box">
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" class="p-img">
-            </div>
-            <div class="p-content">
-                <h3>Premium Real Estate Portal</h3>
-                <p>A property marketplace connecting agents and buyers. Agents can upload listings from mobile, and buyers can filter homes by location and price instantly.</p>
-                <div class="tech-tags">
-                    <span class="tag">Property Tech</span>
-                    <span class="tag">Map Integration</span>
-                    <span class="tag">Admin Panel</span>
-                </div>
-                <a href="#" class="p-link" style="opacity:0.7; cursor:default;">View Case Study <i class="fas fa-lock"></i></a>
-            </div>
-        </div>
+        <script>
+            // ✅ YOUR ACTUAL BACKEND URL (No Change)
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwV67sRsPux6YIhAym88eWK5Fvcqt9naD4_uBQ-3fiIw07jWbn6ymHemXnNTTST49TQ/exec';
 
-        <div class="project-card">
-            <div class="p-img-box">
-                <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" class="p-img">
-            </div>
-            <div class="p-content">
-                <h3>Enterprise E-Commerce Suite</h3>
-                <p>A scalable shopping architecture for any retail business. Supports unlimited products, inventory tracking, and custom delivery logic. Built for high traffic.</p>
-                <div class="tech-tags">
-                    <span class="tag">Global Retail</span>
-                    <span class="tag">Cloud Infrastructure</span>
-                    <span class="tag">High Performance</span>
-                </div>
-                <a href="#" class="p-link" style="opacity:0.7; cursor:default;">System Architecture <i class="fas fa-lock"></i></a>
-            </div>
-        </div>
+            fetch(scriptURL)
+            .then(r => r.json())
+            .then(data => {
+                document.getElementById('loading-box').style.display = 'none';
+                const container = document.getElementById('dynamic-container');
 
-        <div class="stats-grid">
+                if(data.length === 0) {
+                    container.innerHTML = "<p>No projects uploaded yet via Admin Panel.</p>";
+                    return;
+                }
+
+                // Reverse to show new projects first
+                data.reverse().forEach(proj => {
+                    // Safety check for link
+                    const linkUrl = proj.link ? proj.link : "#";
+                    
+                    // Create Card HTML matching the theme
+                    const card = `
+                        <a href="${linkUrl}" target="_blank" class="dynamic-card">
+                            <div class="dc-img-box">
+                                <img src="${proj.image}" alt="${proj.name}" class="dc-img">
+                            </div>
+                            <div class="dc-content">
+                                <div>
+                                    <h3 class="dc-title">${proj.name}</h3>
+                                    <span class="s-tag" style="background:rgba(14,165,233,0.1); color:var(--primary); padding:4px 10px; border-radius:4px;">Live Project</span>
+                                </div>
+                                <span class="dc-btn">View Project <i class="fas fa-external-link-alt"></i></span>
+                            </div>
+                        </a>
+                    `;
+                    container.innerHTML += card;
+                });
+            })
+            .catch(e => {
+                document.getElementById('loading-box').innerHTML = "Error loading projects. Check internet connection. ❌";
+                console.error(e);
+            });
+        </script>
+
+        <div class="stats-grid" style="margin-top: 80px;">
             <div class="stat-item"><h2>100%</h2><p>Custom Code</p></div>
-            <div class="stat-item"><h2>15+</h2><p>Industries Served</p></div>
+            <div class="stat-item"><h2>20+</h2><p>Projects Done</p></div>
             <div class="stat-item"><h2>24/7</h2><p>Maintenance</p></div>
             <div class="stat-item"><h2>5★</h2><p>Client Rating</p></div>
         </div>
@@ -400,6 +423,7 @@
                 <select id="type" class="form-input" style="color: var(--text-muted);">
                     <option>Web Development</option>
                     <option>Android App</option>
+                    <option>Game Development</option> 
                     <option>E-Commerce Store</option>
                     <option>Other</option>
                 </select>
